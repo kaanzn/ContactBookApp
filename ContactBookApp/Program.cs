@@ -1,4 +1,9 @@
-﻿namespace ContactBookApp
+﻿// TODO -- TODO -- TODO -- TODO -- TODO
+// FOR(EditContact() Method) Add a control mechanism so if the user inputs the a name or an email that is exactly the same as the current one, it won't let the user edit it.
+// FOR(ViewContacts() Method) When contacts are displayed, capitalize the first letter of each name.
+// POSSIBLE -- instead of having an EditContact() method that tries to do two things at once, separate the method into EditName() and EditEmail() methods.
+
+namespace ContactBookApp
 {
     public class Program
     {
@@ -11,7 +16,7 @@
             Console.WriteLine("Welcome to the ContactBook App!");
             Thread.Sleep(1000);
             WaitForKey();
-            
+
             do
             {
                 Console.Clear();
@@ -32,13 +37,15 @@
                             ViewContacts();
                             break;
                         case 4:
-                            Console.WriteLine("");
+                            EditContact();
                             break;
                         case 5:
+                            Console.Clear();
+                            Console.WriteLine("Thank you for using ContactBook App!");
                             isRunning = false;
                             break;
                         default:
-                            System.Console.WriteLine("Invalid Input");
+                            Console.WriteLine("Invalid Choice. Please select a valid option from the menu.");
                             WaitForKey();
                             break;
                     }
@@ -48,8 +55,8 @@
                     Console.WriteLine("Invalid Input...");
                     WaitForKey();
                 }
-            }while (isRunning);
-            
+            } while (isRunning);
+
         }
 
         static void WaitForKey()
@@ -68,9 +75,9 @@
                 {
                     Console.WriteLine("Input cannot be empty. Please try again.");
                 }
-            }while (string.IsNullOrWhiteSpace(input));
+            } while (string.IsNullOrWhiteSpace(input));
 
-            return input;
+            return input.ToLower();
         }
 
         static void AddContact()
@@ -109,7 +116,7 @@
 
             }
             WaitForKey();
-            
+
         }
         static void ViewContacts()
         {
@@ -121,7 +128,39 @@
             {
                 foreach (var contact in contacts)
                 {
-                    Console.WriteLine($"Name: {contact.Key} - Email: {contact.Value}");   
+                    Console.WriteLine($"Name: {contact.Key} - Email: {contact.Value}");
+                }
+            }
+            WaitForKey();
+        }
+        static void EditContact()
+        {
+            Console.Write("Enter the name of the contact you wish to edit: ");
+            string name = GetValidInput();
+
+            if (!contacts.ContainsKey(name))
+            {
+                Console.WriteLine($"{name} does not exist.");
+            }
+            else
+            {
+                Console.WriteLine("Do you want to edit \"name\" or \"email\": ");
+                string input = GetValidInput();
+
+                if (input == "name" || input == "n")
+                {
+                    string email = contacts[name];
+
+                    Console.WriteLine("Enter a new name: ");
+                    string newName = GetValidInput();
+
+                    contacts.Remove(name);
+                    contacts.Add(newName, email);
+                }
+                else if (input == "email" || input == "mail" || input == "e-mail")
+                {
+                    Console.WriteLine("Enter a new email: ");
+                    contacts[name] = GetValidInput();
                 }
             }
             WaitForKey();
