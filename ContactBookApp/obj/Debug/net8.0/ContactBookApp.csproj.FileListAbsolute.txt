@@ -12,3 +12,4 @@
 /Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.pdb
 /Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.genruntimeconfig.cache
 /Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ref/ContactBookApp.dll
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.sourcelink.json
