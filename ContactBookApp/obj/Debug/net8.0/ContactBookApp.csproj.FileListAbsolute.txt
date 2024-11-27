@@ -1,0 +1,14 @@
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/bin/Debug/net8.0/ContactBookApp
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/bin/Debug/net8.0/ContactBookApp.deps.json
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/bin/Debug/net8.0/ContactBookApp.runtimeconfig.json
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/bin/Debug/net8.0/ContactBookApp.dll
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/bin/Debug/net8.0/ContactBookApp.pdb
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.AssemblyInfoInputs.cache
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.AssemblyInfo.cs
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.csproj.CoreCompileInputs.cache
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.dll
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/refint/ContactBookApp.dll
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.pdb
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ContactBookApp.genruntimeconfig.cache
+/Users/kaanozaydin/Desktop/C#Projects/ContactBookApp/ContactBookApp/obj/Debug/net8.0/ref/ContactBookApp.dll
