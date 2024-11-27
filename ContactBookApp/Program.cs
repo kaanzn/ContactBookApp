@@ -8,7 +8,7 @@
             bool isRunning = true;
 
             Console.Clear();
-            Console.WriteLine("Welcome to the AddressBook App!");
+            Console.WriteLine("Welcome to the ContactBook App!");
             Thread.Sleep(1000);
             WaitForKey();
             
@@ -26,10 +26,10 @@
                             AddContact();
                             break;
                         case 2:
-                            Console.WriteLine("");
+                            DeleteContact();
                             break;
                         case 3:
-                            Console.WriteLine("");
+                            ViewContacts();
                             break;
                         case 4:
                             Console.WriteLine("");
@@ -57,27 +57,72 @@
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
+        static string GetValidInput()
+        {
+            string? input;
+            do
+            {
+                input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine("Input cannot be empty. Please try again.");
+                }
+            }while (string.IsNullOrWhiteSpace(input));
+
+            return input;
+        }
 
         static void AddContact()
         {
             Console.Write("Enter the name of your contact: ");
-            string? name = Console.ReadLine();
+            string? name = GetValidInput();
+
             Console.Write("Enter the email of your contact: ");
-            string? email = Console.ReadLine();
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email))
+            string? email = GetValidInput();
+
+            if (contacts.ContainsKey(name))
             {
-                Console.WriteLine("Invalid Input.");
-            }
-            else if (contacts.ContainsKey(name))
-            {
-                System.Console.WriteLine("A contact with this name already exists.");
+                Console.WriteLine($"{name} already exists.");
             }
             else
             {
-                contacts.Add(name, email);
+                contacts.Add(name.ToLower(), email);
                 Console.WriteLine("Contact added successfully!");
-                Console.WriteLine("Press any key to continue...");
-                
+            }
+            WaitForKey();
+        }
+        static void DeleteContact()
+        {
+            Console.Write("Enter the name of the contact you wish to delete: ");
+
+            string name = GetValidInput();
+
+            if (!contacts.ContainsKey(name))
+            {
+                Console.WriteLine($"{name} does not exist.");
+            }
+            else
+            {
+                contacts.Remove(name.ToLower());
+                Console.WriteLine("Contact was successfully deleted.");
+
+            }
+            WaitForKey();
+            
+        }
+        static void ViewContacts()
+        {
+            if (contacts.Count == 0)
+            {
+                Console.WriteLine("No contacts found.");
+            }
+            else
+            {
+                foreach (var contact in contacts)
+                {
+                    Console.WriteLine($"Name: {contact.Key} - Email: {contact.Value}");   
+                }
             }
             WaitForKey();
         }
